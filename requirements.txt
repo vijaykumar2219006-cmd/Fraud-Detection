@@ -1,0 +1,8 @@
+torch
+numpy
+pandas
+scikit-learn
+streamlit
+# only needed for the optional REST API (api.py):
+fastapi
+uvicorn

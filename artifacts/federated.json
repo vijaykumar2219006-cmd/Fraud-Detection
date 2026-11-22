@@ -1,0 +1,42 @@
+{
+  "results": [
+    {
+      "model": "Each bank alone (average of 3)",
+      "pr_auc": 0.7532000805118839,
+      "roc_auc": 0.9612390535575323
+    },
+    {
+      "model": "Federated (FedAvg, no data shared)",
+      "pr_auc": 0.825645403145895,
+      "roc_auc": 0.975753716126363
+    },
+    {
+      "model": "Centralised (all data pooled)",
+      "pr_auc": 0.8412661718603501,
+      "roc_auc": 0.9797083247140874
+    }
+  ],
+  "rounds": [
+    {
+      "round": 1,
+      "federated PR-AUC": 0.5572
+    },
+    {
+      "round": 2,
+      "federated PR-AUC": 0.6389
+    },
+    {
+      "round": 3,
+      "federated PR-AUC": 0.7712
+    },
+    {
+      "round": 4,
+      "federated PR-AUC": 0.8157
+    },
+    {
+      "round": 5,
+      "federated PR-AUC": 0.8256
+    }
+  ],
+  "note": "Simulation with 3 banks, 5 rounds x 2 local epochs. Banks share only model weights, never transactions. Customers were split randomly between banks (IID); real banks differ more, which makes federated learning harder."
+}

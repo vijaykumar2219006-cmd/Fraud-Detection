@@ -1,0 +1,21 @@
+{
+  "results": [
+    {
+      "model": "TransFraud transformer (last 10 txns)",
+      "roc_auc": 0.9813812622811919,
+      "pr_auc": 0.7513972224822895,
+      "precision": 0.9024390243902439,
+      "recall": 0.7115384615384616,
+      "f1": 0.7956989247311828
+    },
+    {
+      "model": "Gradient Boosting (current txn only)",
+      "roc_auc": 0.918028564475131,
+      "pr_auc": 0.717625556559379,
+      "precision": 0.813953488372093,
+      "recall": 0.6730769230769231,
+      "f1": 0.7368421052631579
+    }
+  ],
+  "note": "Kaggle credit-card fraud dataset (284,807 transactions, 492 frauds). Time-ordered split: train on the first 70%, validate on the next 15%, test on the last 15% (52 frauds). The data has no customer IDs, so the transformer sees the last 10 consecutive transactions overall, not one customer's history. With so few test frauds, differences between models can be noise."
+}
