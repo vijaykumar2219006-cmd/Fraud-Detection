@@ -56,7 +56,7 @@ _Add your numbers and screenshots here after running `train.py`, `train_real.py`
 
 | Model | PR-AUC | Precision | Recall | F1 |
 |---|---|---|---|---|
-| TransFraud (Transformer) | | | | |
+| TransFraud (Transformer) | 0.866 | 0.89 | 0.752 | 0.815 |
 | LSTM | | | | |
 | Random Forest (no history) | | | | |
 | Gradient Boosting (no history) | | | | |
