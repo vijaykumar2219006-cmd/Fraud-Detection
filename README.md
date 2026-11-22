@@ -71,4 +71,4 @@ _Add your numbers and screenshots here after running `train.py`, `train_real.py`
 Streaming with Kafka, graph-based fraud-ring detection, SHAP explanations, retraining from analyst feedback, production deployment and monitoring.
 
 ## Author
-_Your name · College · Year_
+_ Vijay kumar · Sir M Visvesvaraya Institute of Technology Bengaluru · _
