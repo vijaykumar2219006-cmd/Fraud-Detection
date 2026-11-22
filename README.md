@@ -57,9 +57,9 @@ _Add your numbers and screenshots here after running `train.py`, `train_real.py`
 | Model | PR-AUC | Precision | Recall | F1 |
 |---|---|---|---|---|
 | TransFraud (Transformer) | 0.866 | 0.89 | 0.752 | 0.815 |
-| LSTM | | | | |
-| Random Forest (no history) | | | | |
-| Gradient Boosting (no history) | | | | |
+| LSTM | 0.869 |	0.909 |	0.743 |	0.817 |
+| Random Forest (no history) |	0.875 |	0.953 | 	0.762 |	0.847 |
+| Gradient Boosting (no history) |	0.861 | 	0.913 |	0.734 |	0.813 |
 
 ## Limitations
 - The main data is synthetic, so strong scores show the model can learn the designed patterns, not that it would work on real bank data.
