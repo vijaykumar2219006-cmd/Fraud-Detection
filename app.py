@@ -34,7 +34,7 @@ def validation_scores():
 
 
 def apply_thr(t):
-    st.session_state["thr"] = float(min(max(math.ceil(t * 100) / 100, 0.05), 0.95))
+    st.session_state["thr"] = float(min(max(math.ceil(t * 1000) / 1000, 0.05), 0.999))
 
 
 model, meta = load()
@@ -43,8 +43,9 @@ hero("TransFraud", "Real-time transformer-based financial fraud detection",
      ["Transformer", "Real-time scoring", "Explainable alerts", "Drift monitoring"])
 
 st.sidebar.header("Settings")
-thr = st.sidebar.slider("Alert threshold (High risk)", 0.05, 0.95, float(meta["threshold"]), 0.01, key="thr")
-st.sidebar.caption(f"🔴 High ≥ {thr:.2f}  |  🟡 Medium ≥ {thr * 0.5:.2f}  |  🟢 Low below that")
+thr = st.sidebar.slider("Alert threshold (High risk)", 0.05, 0.999, min(float(meta["threshold"]), 0.999), 0.001,
+                        key="thr", format="%.3f")
+st.sidebar.caption(f"🔴 High ≥ {thr:.3f}  |  🟡 Medium ≥ {thr * 0.5:.3f}  |  🟢 Low below that")
 delay = st.sidebar.slider("Delay between transactions (s)", 0.0, 3.0, 0.5, 0.1)
 n_events = st.sidebar.slider("Transactions to stream", 50, 336, 100, 50)
 drift_on = st.sidebar.checkbox("Simulate behaviour drift (festive season)", value=False,

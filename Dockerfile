@@ -3,8 +3,8 @@ WORKDIR /app
 
 # CPU-only PyTorch keeps the image small
 RUN pip install --no-cache-dir torch --index-url https://download.pytorch.org/whl/cpu
-COPY requirements.txt .
-RUN pip install --no-cache-dir -r requirements.txt
+COPY requirements.txt requirements-api.txt ./
+RUN pip install --no-cache-dir -r requirements-api.txt
 
 COPY . .
 # Train inside the image if the folder doesn't already contain a trained model

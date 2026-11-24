@@ -1,0 +1,4 @@
+# dashboard requirements + the REST API
+-r requirements.txt
+fastapi
+uvicorn

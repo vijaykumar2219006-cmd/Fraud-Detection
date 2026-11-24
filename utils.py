@@ -163,7 +163,8 @@ def suggest_threshold(probs, is_fraud, current, target_precision=0.8):
 
 def cost_curve(y, p, amount, review_cost, grid=None):
     """Money-based view of the threshold: missed frauds lose their amount, every alert costs review time."""
-    grid = np.linspace(0.02, 0.98, 49) if grid is None else grid
+    # fine steps near 1.0 too: class-weighted models push most probabilities towards 0 or 1
+    grid = np.unique(np.concatenate([np.linspace(0.02, 0.98, 49), np.linspace(0.98, 0.999, 22)])) if grid is None else grid
     y, p, amount = np.asarray(y), np.asarray(p), np.asarray(amount, float)
     rows = []
     for t in grid:
